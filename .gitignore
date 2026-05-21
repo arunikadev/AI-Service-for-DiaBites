@@ -1,2 +1,4 @@
 ocr-service/
 __pycache__/
+/venv
+CLAUDE.md

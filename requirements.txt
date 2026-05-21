@@ -4,7 +4,7 @@ python-multipart
 ultralytics
 opencv-python-headless
 tensorflow
-scikit-learn
+scikit-learn==1.4.2
 lightgbm
 pandas
 joblib
