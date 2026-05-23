@@ -22,11 +22,11 @@ print("Loading models...")
 
 try:
     yolo_model = YOLOInference(
-        os.path.join(weights_dir, "halo.pt")
+        os.path.join(weights_dir, "GS.pt")
     )
 
     crnn_model = CRNNInference(
-        weight_path=os.path.join(weights_dir, "crnn_model.keras"),
+        weight_path=os.path.join(weights_dir, "crnn_model-GS.keras"),
         vocab_path=os.path.join(weights_dir, "vocab.json")
     )
 
@@ -38,7 +38,7 @@ except Exception as e:
 
 # LOAD IMAGE
 
-image_filename = "test_image.jpeg"
+image_filename = "b.jpg"
 image_path = os.path.join(os.path.dirname(__file__), image_filename)
 
 if not os.path.exists(image_path):
@@ -47,7 +47,8 @@ if not os.path.exists(image_path):
 
 print(f"Memproses gambar: {image_path}")
 
-image = Image.open(image_path).convert("RGB")
+image = Image.open(image_path).convert("L").convert("RGB")
+# image = Image.open(image_path).convert("RGB")
 
 # Convert PIL → numpy
 image_np = np.array(image)

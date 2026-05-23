@@ -33,11 +33,11 @@ async def startup_event():
     logger.info(f"Memuat model dari: {weights_dir}")
 
     try:
-        yolo_model = YOLOInference(os.path.join(weights_dir, "halo.pt"))
+        yolo_model = YOLOInference(os.path.join(weights_dir, "GS.pt"))
         logger.info("YOLO model (best.pt) berhasil dimuat")
 
         crnn_model = CRNNInference(
-            weight_path=os.path.join(weights_dir, "crnn_model.keras"),
+            weight_path=os.path.join(weights_dir, "crnn_model-GS.keras"),
             vocab_path=os.path.join(weights_dir, "vocab.json")
         )
         logger.info("CRNN model berhasil dimuat")
@@ -89,6 +89,7 @@ async def predict_nutrition(
     try:
         # READ IMAGE
         image_bytes = await image.read()
+        # pil_image = Image.open(io.BytesIO(image_bytes)).convert("L").convert("RGB")
         pil_image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
         image_np = np.array(pil_image)
         logger.info(f"[PREDICT] Gambar dibaca: {pil_image.size} px")
