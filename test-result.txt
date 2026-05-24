@@ -1,0 +1,328 @@
+hasil test : dir:/test/
+2. data = 1.jpeg
+ai service:
+2026-05-23 22:17:24,055 [INFO] [PREDICT] Request diterima | age_group=adult | bmi_category=overweight | diabetes_type=type2 | file=1779549443294-714302516.jpeg (image/jpeg)
+2026-05-23 22:17:24,253 [INFO] [PREDICT] Gambar dibaca: (1204, 1600) px
+2026-05-23 22:17:28,834 [INFO] [PREDICT] YOLO deteksi 6 line(s)
+2026-05-23 22:17:39,566 [INFO] [PREDICT] Line 1: 'Energi Tal 0 kkal al'
+2026-05-23 22:17:39,946 [INFO] [PREDICT] Line 2: 'Lemak Total 6 g'
+2026-05-23 22:17:40,341 [INFO] [PREDICT] Line 3: 'Karbohidrat Total 1 g'
+2026-05-23 22:17:40,772 [INFO] [PREDICT] Line 4: 'Gula 0 g'
+2026-05-23 22:17:41,322 [INFO] [PREDICT] Line 5: 'Gula 0 g'
+2026-05-23 22:17:41,842 [INFO] [PREDICT] Line 6: 'Garam (Natrium) 115  g'
+2026-05-23 22:17:41,843 [INFO] [PREDICT] Teks OCR gabungan: 'Energi Tal 0 kkal al Lemak Total 6 g Karbohidrat Total 1 g Gula 0 g Gula 0 g Garam (Natrium) 115  g'
+2026-05-23 22:17:41,899 [INFO] [PREDICT] Hasil parse nutrition: {'sugar_g': 0.0, 'carbs_g': 1.0, 'calories': 0.0, 'sodium_mg': 115.0, 'fat_g': 6.0}
+2026-05-23 22:17:41,939 [INFO] [ML] Input ke model: {'age_group': 'adult', 'bmi_category': 'overweight', 'diabetes_type': 1, 'sugar_g': 0.0, 'carbs_g': 1.0, 'calories': 0.0, 'sodium_mg': 115.0, 'fat_g': 6.0}
+2026-05-23 22:17:41,940 [INFO] [ML] diabetes_type: 'type2' → 1
+2026-05-23 22:17:46,846 [INFO] [ML] Prediksi: 'Recommended'
+2026-05-23 22:17:46,846 [INFO] [PREDICT] Rekomendasi: Recommended
+INFO:     127.0.0.1:61842 - "POST /predict HTTP/1.1" 200 OK
+
+be response:
+{
+    "success": true,
+    "message": "Analisis berhasil",
+    "data": {
+        "imageUrl": "uploads/scans/1779549443294-714302516.jpeg",
+        "productName": "",
+        "servingSize": "",
+        "calories": 0,
+        "sugar": 0,
+        "carbohydrates": 1,
+        "fat": 6,
+        "sodium": 115,
+        "recommendation": "Recommended"
+    }
+}
+
+2. data = 2.jpg
+ai service:
+2026-05-23 22:20:33,107 [INFO] [PREDICT] Request diterima | age_group=adult | bmi_category=overweight | diabetes_type=type2 | file=1779549632954-489036632.jpg (image/jpeg)
+2026-05-23 22:20:33,197 [INFO] [PREDICT] Gambar dibaca: (1137, 2048) px
+2026-05-23 22:20:33,836 [INFO] [PREDICT] YOLO deteksi 5 line(s)
+2026-05-23 22:20:34,457 [INFO] [PREDICT] Line 1: 'Lemak Total 0 g'
+2026-05-23 22:20:34,851 [INFO] [PREDICT] Line 2: 'Karbohidrat Total 29 g'
+2026-05-23 22:20:35,403 [INFO] [PREDICT] Line 3: 'Gula Total 21 g'
+2026-05-23 22:20:35,836 [INFO] [PREDICT] Line 4: 'Garam (Natrium) 70 mg'
+2026-05-23 22:20:36,388 [INFO] [PREDICT] Line 5: 'Gulra (r atatrium m  mg'
+2026-05-23 22:20:36,444 [INFO] [PREDICT] Teks OCR gabungan: 'Lemak Total 0 g Karbohidrat Total 29 g Gula Total 21 g Garam (Natrium) 70 mg Gulra (r atatrium m  mg'
+2026-05-23 22:20:36,547 [INFO] [PREDICT] Hasil parse nutrition: {'sugar_g': 21.0, 'carbs_g': 29.0, 'calories': 0.0, 'sodium_mg': 70.0, 'fat_g': 0.0}
+2026-05-23 22:20:36,623 [INFO] [ML] Input ke model: {'age_group': 'adult', 'bmi_category': 'overweight', 'diabetes_type': 1, 'sugar_g': 21.0, 'carbs_g': 29.0, 'calories': 0.0, 'sodium_mg': 70.0, 'fat_g': 0.0}
+2026-05-23 22:20:36,708 [INFO] [ML] diabetes_type: 'type2' → 1
+2026-05-23 22:20:36,795 [INFO] [ML] Prediksi: 'Not Recommended'
+2026-05-23 22:20:36,842 [INFO] [PREDICT] Rekomendasi: Not Recommended
+INFO:     127.0.0.1:61923 - "POST /predict HTTP/1.1" 200 OK
+be response:
+{
+    "success": true,
+    "message": "Analisis berhasil",
+    "data": {
+        "imageUrl": "uploads/scans/1779549632954-489036632.jpg",
+        "productName": "",
+        "servingSize": "",
+        "calories": 0,
+        "sugar": 21,
+        "carbohydrates": 29,
+        "fat": 0,
+        "sodium": 70,
+        "recommendation": "Not Recommended"
+    }
+}
+
+3. data = 3.jpg
+ai service:
+2026-05-23 22:22:09,457 [INFO] [PREDICT] Request diterima | age_group=adult | bmi_category=overweight | diabetes_type=type2 | file=1779549729262-460508197.jpg (image/jpeg)
+2026-05-23 22:22:09,547 [INFO] [PREDICT] Gambar dibaca: (1536, 2048) px
+2026-05-23 22:22:10,742 [INFO] [PREDICT] YOLO deteksi 6 line(s)
+2026-05-23 22:22:11,313 [INFO] [PREDICT] Line 1: 'Energi Total 60 kkal'
+2026-05-23 22:22:11,943 [INFO] [PREDICT] Line 2: 'Lemak Total 0 g'
+2026-05-23 22:22:12,609 [INFO] [PREDICT] Line 3: 'Karbohidrat Total 21 g'
+2026-05-23 22:22:13,007 [INFO] [PREDICT] Line 4: 'Gula Total 0 g'
+2026-05-23 22:22:13,375 [INFO] [PREDICT] Line 5: 'Gula Total 0 g'
+2026-05-23 22:22:14,001 [INFO] [PREDICT] Line 6: 'Garam (Natrium) 705 mg'
+2026-05-23 22:22:14,001 [INFO] [PREDICT] Teks OCR gabungan: 'Energi Total 60 kkal Lemak Total 0 g Karbohidrat Total 21 g Gula Total 0 g Gula Total 0 g Garam (Natrium) 705 mg'
+2026-05-23 22:22:14,043 [INFO] [PREDICT] Hasil parse nutrition: {'sugar_g': 0.0, 'carbs_g': 21.0, 'calories': 60.0, 'sodium_mg': 705.0, 'fat_g': 0.0}
+2026-05-23 22:22:14,053 [INFO] [ML] Input ke model: {'age_group': 'adult', 'bmi_category': 'overweight', 'diabetes_type': 1, 'sugar_g': 0.0, 'carbs_g': 21.0, 'calories': 60.0, 'sodium_mg': 705.0, 'fat_g': 0.0}
+2026-05-23 22:22:14,063 [INFO] [ML] diabetes_type: 'type2' → 1
+2026-05-23 22:22:14,114 [INFO] [ML] Prediksi: 'Caution'
+2026-05-23 22:22:14,120 [INFO] [PREDICT] Rekomendasi: Caution
+INFO:     127.0.0.1:61959 - "POST /predict HTTP/1.1" 200 OK
+be response:
+{
+    "success": true,
+    "message": "Analisis berhasil",
+    "data": {
+        "imageUrl": "uploads/scans/1779549729262-460508197.jpg",
+        "productName": "",
+        "servingSize": "",
+        "calories": 60,
+        "sugar": 0,
+        "carbohydrates": 21,
+        "fat": 0,
+        "sodium": 705,
+        "recommendation": "Caution"
+    }
+}
+
+4. data = 4.jpg
+ai service:
+2026-05-23 22:23:48,937 [INFO] [PREDICT] Request diterima | age_group=adult | bmi_category=overweight | diabetes_type=type2 | file=1779549828809-945330617.jpg (image/jpeg)
+2026-05-23 22:23:48,947 [INFO] [PREDICT] Gambar dibaca: (512, 512) px
+2026-05-23 22:23:50,292 [INFO] [PREDICT] YOLO deteksi 10 line(s)
+2026-05-23 22:23:50,960 [INFO] [PREDICT] Line 1: 'Gul g'
+2026-05-23 22:23:52,005 [INFO] [PREDICT] Line 2: 'Gula g'
+2026-05-23 22:23:52,652 [INFO] [PREDICT] Line 3: 'Gula S 27 g'
+2026-05-23 22:23:53,275 [INFO] [PREDICT] Line 4: 'Energi Total 10 kkal'
+2026-05-23 22:23:53,838 [INFO] [PREDICT] Line 5: 'Energi Total 110 g'
+2026-05-23 22:23:54,369 [INFO] [PREDICT] Line 6: 'Lemak Total 6 g'
+2026-05-23 22:23:54,874 [INFO] [PREDICT] Line 7: 'Karbohidrat Total 11 g'
+2026-05-23 22:23:55,506 [INFO] [PREDICT] Line 8: 'Gula 1 g'
+2026-05-23 22:23:56,138 [INFO] [PREDICT] Line 9: 'Gula 1 g'
+2026-05-23 22:23:57,046 [INFO] [PREDICT] Line 10: 'Garam (Natrium) 85 mg'
+2026-05-23 22:23:57,059 [INFO] [PREDICT] Teks OCR gabungan: 'Gul g Gula g Gula S 27 g Energi Total 10 kkal Energi Total 110 g Lemak Total 6 g Karbohidrat Total 11 g Gula 1 g Gula 1 g Garam (Natrium) 85 mg'
+2026-05-23 22:23:57,138 [INFO] [PREDICT] Hasil parse nutrition: {'sugar_g': 0.0, 'carbs_g': 11.0, 'calories': 10.0, 'sodium_mg': 85.0, 'fat_g': 6.0}
+2026-05-23 22:23:57,140 [INFO] [ML] Input ke model: {'age_group': 'adult', 'bmi_category': 'overweight', 'diabetes_type': 1, 'sugar_g': 0.0, 'carbs_g': 11.0, 'calories': 10.0, 'sodium_mg': 85.0, 'fat_g': 6.0}
+2026-05-23 22:23:57,141 [INFO] [ML] diabetes_type: 'type2' → 1
+2026-05-23 22:23:57,191 [INFO] [ML] Prediksi: 'Recommended'
+2026-05-23 22:23:57,192 [INFO] [PREDICT] Rekomendasi: Recommended
+INFO:     127.0.0.1:62015 - "POST /predict HTTP/1.1" 200 OK
+
+be response:
+{
+    "success": true,
+    "message": "Analisis berhasil",
+    "data": {
+        "imageUrl": "uploads/scans/1779549828809-945330617.jpg",
+        "productName": "",
+        "servingSize": "",
+        "calories": 10,
+        "sugar": 0,
+        "carbohydrates": 11,
+        "fat": 6,
+        "sodium": 85,
+        "recommendation": "Recommended"
+    }
+}
+
+5. data = 5.jpeg
+ai service:
+2026-05-23 22:25:25,210 [INFO] [PREDICT] Request diterima | age_group=adult | bmi_category=overweight | diabetes_type=type2 | file=1779549924812-681626101.jpeg (image/jpeg)
+2026-05-23 22:25:25,442 [INFO] [PREDICT] Gambar dibaca: (1900, 998) px
+2026-05-23 22:25:26,504 [INFO] [PREDICT] YOLO deteksi 5 line(s)
+2026-05-23 22:25:27,287 [INFO] [PREDICT] Line 1: 'Energi Total 10 kkal'
+2026-05-23 22:25:28,004 [INFO] [PREDICT] Line 2: 'Lemak Total 5 g'
+2026-05-23 22:25:28,456 [INFO] [PREDICT] Line 3: 'Karbohidrat Total 13 g'
+2026-05-23 22:25:28,943 [INFO] [PREDICT] Line 4: 'Gula 1 g'
+2026-05-23 22:25:29,532 [INFO] [PREDICT] Line 5: 'Garam (Natrium) 85 mg'
+2026-05-23 22:25:29,533 [INFO] [PREDICT] Teks OCR gabungan: 'Energi Total 10 kkal Lemak Total 5 g Karbohidrat Total 13 g Gula 1 g Garam (Natrium) 85 mg'
+2026-05-23 22:25:29,544 [INFO] [PREDICT] Hasil parse nutrition: {'sugar_g': 1.0, 'carbs_g': 13.0, 'calories': 10.0, 'sodium_mg': 85.0, 'fat_g': 5.0}
+2026-05-23 22:25:29,550 [INFO] [ML] Input ke model: {'age_group': 'adult', 'bmi_category': 'overweight', 'diabetes_type': 1, 'sugar_g': 1.0, 'carbs_g': 13.0, 'calories': 10.0, 'sodium_mg': 85.0, 'fat_g': 5.0}
+2026-05-23 22:25:29,551 [INFO] [ML] diabetes_type: 'type2' → 1
+2026-05-23 22:25:29,587 [INFO] [ML] Prediksi: 'Recommended'
+2026-05-23 22:25:29,590 [INFO] [PREDICT] Rekomendasi: Recommended
+INFO:     127.0.0.1:62063 - "POST /predict HTTP/1.1" 200 OK
+
+be response:
+{
+    "success": true,
+    "message": "Analisis berhasil",
+    "data": {
+        "imageUrl": "uploads/scans/1779549924812-681626101.jpeg",
+        "productName": "",
+        "servingSize": "",
+        "calories": 10,
+        "sugar": 1,
+        "carbohydrates": 13,
+        "fat": 5,
+        "sodium": 85,
+        "recommendation": "Recommended"
+    }
+}
+
+
+================================================================================
+   ANALISIS & TEMUAN  —  model grayscale (GS.pt + crnn_model-GS.keras)
+   Tanggal uji: 2026-05-23
+================================================================================
+
+A. RINGKASAN EKSEKUTIF
+--------------------------------------------------------------------------------
+Retrain grayscale = progres NYATA untuk DETEKSI baris (Lemak kini terbaca), tapi
+TIDAK memperbaiki masalah inti: salah-baca DIGIT (Energi 100/110 -> 10). Akar
+masalahnya sudah teridentifikasi spesifik (lihat D1) dan BISA diperbaiki dalam
+skala capstone tanpa ganti OCR. Yang menahan akurasi sekarang bukan "foto user
+jelek", melainkan post-processing (duplikat box, parser) + cara crop ke CRNN.
+
+
+B. SCORECARD OBJEKTIF (2 gambar yang ground-truth-nya pasti)
+--------------------------------------------------------------------------------
+                  data 4 (512px, images.jpg)   data 5 (1900px, ROASTED CORN)
+  Ground truth    E110 L6 K11 G1 Na85          E100 L5 K13 G1 Na95
+  Hasil           E10  L6 K11 G0 Na85          E10  L5 K13 G1 Na85
+  Benar           3/5 (Lemak,Karbo,Na)         3/5 (Lemak,Karbo,Gula)
+  Masalah utama   10 box utk label 5-baris;    Energi 10 (x), Garam 85 (x, GT 95)
+                  Gula=0 (parser pecah)
+
+  -> Bahkan di 2 gambar TERBERSIH, akurasi field hanya 3/5, dan ENERGI selalu salah.
+
+
+C. YANG MEMBAIK (kredit untuk AI engineer)
+--------------------------------------------------------------------------------
+  1. Lemak Total kini terdeteksi di 512px (dulu hilang -> fat=0; kini fat=6).
+     Penambahan data grayscale terbukti menambah recall deteksi baris.
+  2. data 5: box Energi ganda lenyap, 5 baris bersih.
+
+
+D. YANG MASIH RUSAK + AKAR MASALAH
+--------------------------------------------------------------------------------
+D1. SALAH-BACA DIGIT = "CTC repeated-character collapse"  [PRIORITAS UTAMA]
+
+    Pola: Energi 100 -> "10"  dan  110 -> "10". Keduanya menjatuhkan SATU digit
+    kembar ("00"->"0", "11"->"1"). Ini ciri khas CTC collapse: dua karakter
+    identik berurutan digabung jadi satu bila tidak ada token "blank" di antaranya.
+
+    BUKTI EMAS (dari data 4 di atas):
+        Line 4: "Energi Total 10 kkal"   (collapse -> 10)
+        Line 5: "Energi Total 110 g"     (BENAR -> 110)
+    Box yang sama, dua framing crop berbeda: satu collapse, satu BENAR. Artinya
+    model SEBENARNYA BISA membaca 110 -- masalahnya alokasi "frame"/time-step ke
+    digit, bukan kemampuan model. Saat crop lebar dengan GAP besar antara label
+    dan nilai ("Energi Total ........ 100 kkal"), gap memakan time-step sehingga
+    digit nilai terlalu padat -> blank antar digit kembar hilang -> collapse.
+
+    => Ini BUKAN soal warna/resolusi. Grayscale tidak menyentuhnya. Tapi BISA
+       diperbaiki (lihat F-P1).
+
+D2. DUPLIKAT BOX MELEDAK (model grayscale lebih sensitif)
+    data 4 (512px): 10 box untuk label 5-baris ("Gul g", "Gula g", "Gula S 27 g",
+    Energi ganda, Gula ganda). NMS default (iou=0.7) tidak membuangnya.
+
+D3. PARSER AMBIL MATCH PERTAMA
+    data 4: Gula=0 padahal "Gula 1 g" ADA -- karena token sampah "Gul g" /
+    "Gula S 27 g" cocok keyword "gula" lebih dulu, lalu tak ada angka valid.
+
+
+E. PENILAIAN KLAIM AI ENGINEER (objektif)
+--------------------------------------------------------------------------------
+  "Kurang dataset"          -> BENAR. Terbukti memperbaiki deteksi Lemak.
+  "Tergantung user kirim    -> SETENGAH BENAR. Bagian "resolusi tinggi = bagus"
+   foto resolusi tinggi"       KELIRU secara empiris: data 5 (1900px, paling
+                               jelas) tetap baca Energi 10; batch 3000-4032px
+                               malah hancur total. Ada TITIK MANIS (ter-crop
+                               rapat, datar, cahaya rata, resolusi sedang) --
+                               bukan "makin tinggi makin bagus".
+  "Distorsi cahaya &         -> BENAR (terkonfirmasi images-3/5/6).
+   kemasan melengkung ngaruh"
+
+  Catatan: duplikat box & salah-digit BUKAN salah foto user -- itu di
+  model/post-processing. Jangan dipindahkan jadi tanggung jawab user.
+
+
+F. ACTION ITEMS — UNTUK AI ENGINEER
+--------------------------------------------------------------------------------
+[P0] Cepat (post-processing, tanpa retrain — bisa hari ini)
+  1. NMS lebih ketat: model.predict(..., iou=0.5). Buang ledakan duplikat.
+     CATATAN: dedup harus simpan box yang baca BENAR. Karena kasus Energi
+     menghasilkan "10" (conf bisa lebih tinggi) vs "110", dedup saja belum tentu
+     menyelamatkan digit -> tetap butuh P1.
+  2. Normalisasi resolusi: downscale gambar >~1500px ke ~1000-1200px sebelum
+     pipeline. Tak memperbaiki 100->10, tapi cegah kasus 3000px hancur total.
+  3. Parser tahan-duplikat: lewati token keyword yang TIDAK punya angka valid di
+     dekatnya; pilih kandidat yang punya angka, bukan match pertama.
+
+[P1] Inti akurasi digit (masih dalam skala capstone) — INI YANG PALING BERDAMPAK
+  4. Perbaiki CTC collapse (lihat D1). Tiga jalur, urut dari termurah:
+     a. Crop KOLOM-NILAI terpisah (hilangkan gap label<->nilai yang memakan
+        time-step). Eksperimen kami: isolasi nilai membuat "100" terbaca benar.
+     b. Naikkan lebar input CRNN / kurangi downsampling horizontal -> lebih
+        banyak frame per digit -> blank bisa muncul antar digit kembar.
+     c. Augmentasi data latih: perbanyak angka multi-digit & kembar
+        (100,110,200,220,55,88,...) dengan variasi gap label-nilai.
+  5. Bangun EVAL SET berlabel (30-50 foto BPOM nyata + ground-truth) lalu ukur
+     AKURASI PER-FIELD. Tanpa ini, "membaik" hanya anekdot. Wajib untuk tahu
+     apakah perubahan benar-benar menolong.
+
+[P2] Struktural / jangka panjang
+  6. Augmentasi sintetis kondisi nyata: warp perspektif (kemasan melengkung) +
+     simulasi glare/brightness -> tahan foto HP asli.
+  7. Pertimbangkan deteksi PER-KELAS (YOLO label tiap baris gizi sebagai class)
+     -> kurangi ketergantungan pada OCR + fuzzy keyword.
+  8. Bila akurasi mentok: ganti CRNN custom dengan OCR matang (PaddleOCR / Google
+     ML Kit on-device). Solusi terkuat, tapi keputusan tim (saat ini ditunda).
+
+
+G. ACTION ITEMS — UNTUK SAYA (Backend / Produk)
+--------------------------------------------------------------------------------
+  1. [KUNCI] Human-in-the-loop di Frontend: tampilkan hasil OCR sebagai FORM yang
+     BISA DIEDIT sebelum rekomendasi. User koreksi (mis. Energi 10->110) lalu baru
+     dapat rekomendasi. Backend SUDAH siap: respons /analyze punya flag
+     needsManualReview + endpoint saveScan menerima nilai terkoreksi & hitung
+     ulang rekomendasi. Tinggal FE-nya.
+  2. Overlay panduan kamera di app: bingkai "letakkan tabel gizi di sini, datar &
+     terang". Batasi kualitas input saat capture, bukan sekadar menasihati.
+  3. Bantu kumpulkan EVAL SET: foto label BPOM nyata + ground-truth manual ->
+     berikan ke AI engineer (kontribusi data paling berharga).
+  4. Jaga SCOPE: 5 field (kalori, gula, natrium, karbo, lemak total),
+     BPOM/Indonesia saja, produk impor & label bilingual DI LUAR scope.
+  5. Ekspektasi demo: OCR = ASISTEN, bukan oracle. User adalah penjamin akhir.
+  6. (Sudah selesai) Backend: guard data rusak (needsManualReview, non-blocking),
+     pemetaan error HTTP AI service, validasi enum rekomendasi.
+
+
+H. VERDICT & ROADMAP (pendapat senior)
+--------------------------------------------------------------------------------
+  Arsitektur pipeline wajar untuk capstone, TAPI CRNN custom punya plafon akurasi.
+  Yang membuatnya bisa dipakai BUKAN mengejar OCR sempurna (tidak realistis di
+  skala ini), melainkan:
+
+    1. Quick wins P0 (dedup, parser, normalisasi resolusi)         -> minggu ini
+    2. Perbaikan CTC/value-crop P1 (lever akurasi digit terbesar)  -> sprint ini
+    3. Human-in-the-loop sebagai jaring pengaman (produk tetap     -> paralel (FE)
+       berguna & AMAN walau OCR meleset)
+    4. Eval set berlabel untuk mengukur kemajuan objektif          -> fondasi
+
+  Prinsip: untuk app diabetes, lebih baik "minta user konfirmasi" daripada
+  "diam-diam salah". Akurasi OCR ditingkatkan bertahap; keamanan rekomendasi
+  dijamin oleh human-in-the-loop SEKARANG.
+
+================================================================================
