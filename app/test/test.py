@@ -22,7 +22,7 @@ print("Loading models...")
 
 try:
     yolo_model = YOLOInference(
-        os.path.join(weights_dir, "GS.pt")
+        os.path.join(weights_dir, "29m1.pt")
     )
 
     crnn_model = CRNNInference(
@@ -38,7 +38,7 @@ except Exception as e:
 
 # LOAD IMAGE
 
-image_filename = "b.jpg"
+image_filename = "3.jpg"
 image_path = os.path.join(os.path.dirname(__file__), image_filename)
 
 if not os.path.exists(image_path):

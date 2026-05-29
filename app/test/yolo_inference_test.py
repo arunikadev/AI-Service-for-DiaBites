@@ -18,7 +18,7 @@ print("Loading YOLO model...")
 
 try:
     yolo_model = YOLOInference(
-        os.path.join(weights_dir, "GS.pt")
+        os.path.join(weights_dir, "cobalagi.pt")
     )
     print("[OK] YOLO model berhasil di-load!")
 
@@ -26,7 +26,7 @@ except Exception as e:
     print("[ERROR] Error loading model:", e)
     sys.exit(1)
 
-image_filename = "c.jpg"
+image_filename = "5.jpeg"
 
 image_path = os.path.join(
     os.path.dirname(__file__),
