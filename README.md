@@ -1,4 +1,4 @@
-# DiaBites AI-Service 🤖🩺
+# DiaBites AI-Service 
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-green)
@@ -12,7 +12,7 @@ Aplikasi ini menggunakan perpaduan **Computer Vision** (YOLO), **Optical Charact
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 - **Pendeteksi Baris Teks Gizi (YOLO)**: Mendeteksi dan memotong baris-baris informasi gizi dari sebuah gambar label kemasan secara akurat.
 - **Ekstraksi Teks (OCR CRNN)**: Membaca teks dari potongan gambar hasil YOLO untuk mengenali angka dan jenis nutrisi.
@@ -22,7 +22,7 @@ Aplikasi ini menggunakan perpaduan **Computer Vision** (YOLO), **Optical Charact
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Backend Framework**: [FastAPI](https://fastapi.tiangolo.com/), Uvicorn
 * **Computer Vision & OCR**: OpenCV, Pillow, Ultralytics (YOLOv8), TensorFlow / Keras
@@ -31,7 +31,7 @@ Aplikasi ini menggunakan perpaduan **Computer Vision** (YOLO), **Optical Charact
 
 ---
 
-## 📂 Struktur Proyek
+## Struktur Proyek
 
 ```text
 AI-Service/
@@ -54,7 +54,7 @@ AI-Service/
 
 ---
 
-## 🚀 Panduan Menjalankan (Getting Started)
+## Panduan Menjalankan (Getting Started)
 
 ### 1. Prasyarat (Prerequisites)
 - Python 3.9 atau lebih baru.
@@ -90,7 +90,7 @@ Server akan berjalan secara default di `http://127.0.0.1:8000`.
 
 ---
 
-## 📖 Dokumentasi API
+## Dokumentasi API
 
 FastAPI menyediakan dokumentasi UI interaktif secara otomatis. Setelah server berjalan, Anda dapat menjelajahi seluruh endpoint melalui browser:
 - **Swagger UI**: `http://127.0.0.1:8000/docs`
@@ -144,7 +144,7 @@ Menerima gambar Nutrition Facts, mengekstrak nilai gizi, dan mengembalikan hasil
 
 ---
 
-## 📝 Catatan Penting Pengembangan (Notes)
+## Catatan Penting Pengembangan (Notes)
 - **Modifikasi Bounding Box YOLO**: Terdapat logika khusus pada file `app/model/yolo_line.py` untuk menyesuaikan atau menahan perpanjangan batas lebar dari kotak pemotongan (crop) `bounding box` YOLO. Ini bertujuan agar kolom tabel persentase (% AKG) pada kemasan makanan tidak ikut dibaca dan mengacaukan teks nilai numerik OCR.
 - **Optimasi Memori**: API ini secara otomatis akan memuat dan merendam tiga model berat sekaligus pada scope global saat proses _startup_. Sangat disarankan melakukan *deployment* pada *environment* (seperti VM, Cloud Run, atau EC2) yang menyediakan alokasi minimal memori RAM sebesar 1.5GB hingga 2GB untuk menjamin kelancaran *inference*.
 
