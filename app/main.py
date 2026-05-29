@@ -33,7 +33,7 @@ async def startup_event():
     logger.info(f"Memuat model dari: {weights_dir}")
 
     try:
-        yolo_model = YOLOInference(os.path.join(weights_dir, "GS.pt"))
+        yolo_model = YOLOInference(os.path.join(weights_dir, "29m1.pt"))
         logger.info("YOLO model (best.pt) berhasil dimuat")
 
         crnn_model = CRNNInference(
