@@ -26,8 +26,8 @@ try:
     )
 
     crnn_model = CRNNInference(
-        weight_path=os.path.join(weights_dir, "crnn_model-GS.keras"),
-        vocab_path=os.path.join(weights_dir, "vocab.json")
+        weight_path=os.path.join(weights_dir, "crnn_baru.keras"),
+        vocab_path=os.path.join(weights_dir, "vocab_baru.json")
     )
 
     print("[OK] Model berhasil di-load!")
@@ -38,7 +38,7 @@ except Exception as e:
 
 # LOAD IMAGE
 
-image_filename = "3.jpg"
+image_filename = "a.jpeg"
 image_path = os.path.join(os.path.dirname(__file__), image_filename)
 
 if not os.path.exists(image_path):
